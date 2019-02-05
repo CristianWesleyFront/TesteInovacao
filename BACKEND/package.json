@@ -1,0 +1,25 @@
+{
+  "name": "BACKEND",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/www/louder.js",
+  "scripts": {
+    "dev": "nodemon"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "express-query-int": "^3.0.0",
+    "jsonwebtoken": "^8.4.0",
+    "lodash": "^4.17.11",
+    "mongoose": "^5.4.9",
+    "mongoose-paginate": "^5.0.3",
+    "node-restful": "^0.2.6",
+    "nodemon": "^1.18.9",
+    "pm2": "^3.2.9"
+  }
+}
