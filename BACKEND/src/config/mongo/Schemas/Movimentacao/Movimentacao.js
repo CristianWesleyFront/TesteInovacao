@@ -6,6 +6,7 @@ const movimentacaoSchema = new mongoose.Schema({
     descricao: { type: String, max: 500, required: true },
     funcionario: { type: String, required: true },
     departamento: { type: String, required: true },
-    valor: { type: Number, required: true }
+    valor: { type: Number, required: true },
+    createdAt: {type: Date, default: Date.now } 
   })
   module.exports = restful.model('Movimentacao', movimentacaoSchema)

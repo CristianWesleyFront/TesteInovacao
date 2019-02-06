@@ -6,6 +6,20 @@ module.exports = function(server) {
 
     
 
+    //URL BASICA 
+    const router = express.Router()
+    server.use('/api', router)
+
+     // Rotas de funcionario
+    const funcionando = require('../../api/funcionarioService')
+    funcionando.register(router, '/funcionario')
+
+    //Rota de movimentacao
+    const movimentacao = require('../../api/movimentacaoService')
+    movimentacao.register(router, '/movimentacao')
+
+
+
     // /*
     // * Rotas protegidas por Token JWT
     // */
@@ -20,9 +34,9 @@ module.exports = function(server) {
     // /*
     // * Rotas abertas
     // */
-    const openApi = express.Router()
-    server.use('/oapi', openApi)
-    openApi.get('/', (req,res)=> res.send('funcionando'))
+    // const openApi = express.Router()
+    // server.use('/oapi', openApi)
+    // openApi.get('/', (req,res)=> res.send('funcionando'))
     // const AuthService = require('../api/user/AuthService')
     // openApi.post('/login', AuthService.login)
     // openApi.post('/signup', AuthService.signup)
