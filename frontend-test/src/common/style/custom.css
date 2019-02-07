@@ -1,0 +1,35 @@
+.main-footer{
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
+
+button{
+    margin-left: 5px
+}
+
+.cabeca{
+    text-align: center
+}
+
+.lista{
+    margin-top: 25px;
+}
+
+.table-sla td:nth-child(1){
+    width: 65%;
+}
+.table-sla td:nth-child(2){
+    width: 25%;
+}
+.table-sla td:nth-child(3){
+    width: 5%;
+}
+
+.tableActions{
+    width: 150px
+}
+
+.tabelaLinha{
+    white-space: pre-wrap;
+}

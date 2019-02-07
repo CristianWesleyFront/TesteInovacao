@@ -1,53 +1,67 @@
 import React from 'react'
-import Content from '../common/content'
-import ContentHeader from '../common/contentHeader'
-
+import IconButton from '../common/template/iconButton'
 
 export default props => {
+    
+    const keyHandlerFun = () => props.handleSearchFun() 
+    const keyHandler = () => props.handleSearch() 
+    
     const renderRows = () =>{
         const list = props.list || []
         return list.map(list => (
             <tr key={list._id}>
-                <td>{list.titulo}</td>
+                <td class='tabelaLinha'>{list.description}</td>
                 <td>{list.funcionario}</td>
-                <td>{list.departamento}</td>
                 <td>{list.valor}</td>
                 <td>
-                    {/* <IconButton style='success' icon='check' hide={todo.done}
-                        onClick={()=> props.handleMarkAsDone(todo)}></IconButton>
-    
-                    <IconButton style='warning' icon='undo' hide={!todo.done}
-                        onClick={()=> props.handleMarkAsPending(todo)}></IconButton>
-    
-                    <IconButton style='danger' icon='trash-o' hide={!todo.done}
-                        onClick={()=>props.handleRemove(todo)}></IconButton> */}
+                    <IconButton style='danger' icon='trash-o' onClick={()=>props.handleRemove(list)}></IconButton>
                 </td>
             </tr>
         ))
     }
+
     return (
         <div>
-        <ContentHeader title='Lista de Movimentações' small='chablau' />
-        <Content>
-            <table className='table'>
+            <table className='table table-bordered table-striped table-hover table-condensed lista table-sla'>
                 <thead>
                     <tr>
-                        <th>Movimentações</th>
-                        <th className='tableActions'>Funcionario</th>
-                        <th>Departamento</th>
+                        <th>Descriçao</th>
+                        <th >Funcionario</th>
                         <th>Valor</th>
+                        <th className='tableActions'></th>
                     </tr>
-                    
+
+                    <tr>
+                        <th>
+                            <input 
+                                id='description' 
+                                className='form-control' 
+                                placeholder='Pesquisar por descrição' 
+                                onChange={props.handleChange}
+                                onKeyUp = {keyHandler}
+                                value={props.description}>
+                            </input>
+                        </th>
+                        
+                        <th>
+                            <input 
+                                id='funcionario' 
+                                className='form-control' 
+                                onKeyUp = {keyHandlerFun}
+                                placeholder='Pesquisar por funcionario' 
+                                onChange={props.handleChangeFun}
+                                value={props.funcionario}>
+                            </input>
+                        </th>
+                        <th></th>
+                        <th></th>
+                    </tr>
                 </thead>
 
                 <tbody>
                     {renderRows()}
                 </tbody>
-            
             </table>
-        </Content>
-         
-    </div> 
-    )
-    
+        </div> 
+    )  
 }

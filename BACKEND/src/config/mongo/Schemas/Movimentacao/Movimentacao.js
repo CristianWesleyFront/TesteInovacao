@@ -2,10 +2,8 @@ const restful = require('node-restful')
 const mongoose = restful.mongoose
 
 const movimentacaoSchema = new mongoose.Schema({
-    titulo: { type: String, required: true },
-    descricao: { type: String, max: 500, required: true },
+    description: { type: String, min: 0, max: 5, required: true },
     funcionario: { type: String, required: true },
-    departamento: { type: String, required: true },
     valor: { type: Number, required: true },
     createdAt: {type: Date, default: Date.now } 
   })

@@ -11,4 +11,5 @@ import 'admin-lte/dist/css/AdminLTE.css'
 import 'admin-lte/dist/css/skins/_all-skins.css'
 import 'admin-lte/plugins/iCheck/flat/blue.css'
 
-import './custom.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import '../style/custom.css'
