@@ -4,4 +4,4 @@ const mongoose = restful.mongoose
 const departamentoSchema = new mongoose.Schema({
     name: { type: String, max: 100, required: true },
   })
-  module.exports = departamentoSchema
+  module.exports = restful.model('Departamento', departamentoSchema)

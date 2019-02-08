@@ -18,6 +18,9 @@ module.exports = function(server) {
     const movimentacao = require('../../api/movimentacaoService')
     movimentacao.register(router, '/movimentacao')
 
+    //Rota de departamento
+    const departamento = require('../../api/departamentoService')
+    departamento.register(router, '/departamento')
 
 
     // /*
