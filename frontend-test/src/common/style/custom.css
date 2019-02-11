@@ -8,13 +8,36 @@ button{
     margin-left: 5px
 }
 
+.marginBotton{
+    margin-bottom: 7px;
+}
+.centerMovi {
+    margin: auto;
+    margin-top: 35px;
+    margin-right: -200px;
+    text-align: center;
+    width: 85%;
+    
+    padding: 10px;
+}
+
+.centerDep {
+    margin: auto;
+    margin-top: 35px;
+    margin-right: -130px;
+    text-align: center;
+    width: 85%;
+    
+    padding: 10px;
+}
+
 .center {
     margin: auto;
     margin-top: 35px;
     margin-right: -80px;
     text-align: center;
     width: 85%;
-    /* border: 3px solid green; */
+    
     padding: 10px;
   }
 
@@ -26,6 +49,12 @@ button{
     margin-top: 25px;
 }
 
+.table-sla-dep td:nth-child(1){
+    width: 95%;
+}
+.table-sla-dep td:nth-child(2){
+    width: 5%;
+}
 .table-sla td:nth-child(1){
     width: 65%;
 }

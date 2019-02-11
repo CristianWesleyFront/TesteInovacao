@@ -3,11 +3,10 @@ import IconButton from '../../common/template/iconButton'
 
 export default props => {
     const renderRows = () =>{
-        const list = props.listFuncionarios || []
+        const list = props.listDepartamentos || []
         return list.map(list => (
             <tr key={list._id}>
                 <td>{list.name}</td>
-                <td>{list.departamento}</td>
                 <td>
                     <IconButton style='danger' icon='trash-o' onClick={()=>props.handleRemove(list)}></IconButton>
                 </td>
@@ -17,10 +16,9 @@ export default props => {
 
     return (
         <div>
-            <table className='table table-bordered table-striped table-hover table-condensed lista table-sla'>
+            <table className='table table-bordered table-striped table-hover table-condensed lista table-sla-dep'>
                 <thead>
-                    <tr>
-                        <th >Funcionario</th>
+                    <tr> 
                         <th>Departamento</th>
                         <th className='tableActions'></th>
                     </tr>

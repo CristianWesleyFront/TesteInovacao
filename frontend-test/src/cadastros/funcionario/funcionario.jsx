@@ -1,17 +1,18 @@
 import React, {Component} from 'react'
 import Content from '../../common/content/content'
 import ContentHeader from '../../common/content/contentHeader'
-import Form from './funcionarioForm'
-
-
 import axios from 'axios'
+import Form from './funcionarioForm'
+import List from './funcionarioList'
+
+
 const URL = 'http://localhost:9000/api/funcionario'
 const URLDe = 'http://localhost:9000/api/departamento'
 
 export default class Formulario extends Component {
     constructor(prosp){
         super(prosp)
-        this.state = {name: '', departamento: '', listDepartamentos: [] }
+        this.state = {name: '', departamento: '', listDepartamentos: [],listFuncionarios: [] }
         this.handleChange = this.handleChange.bind(this)
         this.handleChangeDe = this.handleChangeDe.bind(this)
         this.handleAdd = this.handleAdd.bind(this)
@@ -51,7 +52,8 @@ export default class Formulario extends Component {
     }
     refresh(name = '') {
         axios.get(`${URL}?sort=-createdAt`)
-             .then(resp => this.setState({...this.state,name, list: resp.data}))
+             .then(resp => this.setState({...this.state,name, listFuncionarios: resp.data})
+                 )
              .then(axios.get(URLDe)
                 .then(resp => this.setState({...this.state,listDepartamentos: resp.data})))
     }
@@ -71,7 +73,11 @@ export default class Formulario extends Component {
                      handleAdd={this.handleAdd}
                      handleClear= {this.handleClear}
                     ></Form>
-                   
+                    <hr/>
+                   <List 
+                     listFuncionarios={this.state.listFuncionarios}
+                     handleRemove = {this.handleRemove}
+                   />
                 </Content>
             </div> 
         )
