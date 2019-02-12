@@ -12,19 +12,13 @@ export default props =>{
             list[index]={value:list.name, label:list.name}
         ))
     }
-    const renderOptionDep = () => {
-        let list = props.listDep || []
-        return list.map((list,index,array) => (
-            list[index]={value:list.name, label:list.name}
-        ))
-    }
-
+   
     return(
         <div role='form' className='todoForm centerMovi'>
             <Grid cols = '3 3 5'> 
                 <input id='Descrição' className='form-control marginBotton' 
                 placeholder='Adicione um Descrição' onChange={props.handleChangeDescription}
-                value={props.description}></input>
+                value={props.description} maxLength='500'></input>
 
                 <Select
                     name="Funcionario"
@@ -34,16 +28,8 @@ export default props =>{
                     onChange={props.handleChangeFuncionario}
                     placeholder="Funcionario"
                 />
-                <Select
-                    name="departamentos"
-                    options={renderOptionDep()}
-                    className="basic-multi-select marginBotton"
-                    classNamePrefix="departamentos"
-                    onChange={props.handleChangeDepartamento}
-                    placeholder="Departamentos"
-                />
 
-                <input id='Valor' className='form-control marginBotton' 
+                <input type='number' id='Valor' className='form-control marginBotton' 
                 placeholder='Adicione um Valor R$' onChange={props.handleChangeValor}
                 value={props.valor}></input>
                 <br></br>

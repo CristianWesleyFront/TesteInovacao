@@ -17,7 +17,7 @@ export default props =>{
         <Grid cols = '3 3 5'> 
             <input id='name' className='form-control' 
             placeholder='Adicione um Funcionario' onChange={props.handleChange}
-            value={props.name}></input>
+            value={props.name} maxLength='200'></input>
         </Grid>
         <Grid cols = '3 3 3'> 
             <Select

@@ -59,12 +59,15 @@ button{
     width: 65%;
 }
 .table-sla td:nth-child(2){
-    width: 25%;
+    width: 20%;
 }
 .table-sla td:nth-child(3){
-    width: 5%;
+    text-align: center;
+    width: 10%;
 }
-
+.tbcenter{
+    text-align: center;
+}
 .tableActions{
     width: 150px
 }

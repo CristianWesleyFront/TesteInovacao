@@ -29,7 +29,6 @@ export default class Departamento extends Component {
         const name =  this.state.departamento
         axios.post(URL, { name })
              .then(resp => this.refresh())
-             
      }
      handleRemove(todo) {    
         axios.delete(`${URL}/${todo._id}`)

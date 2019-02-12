@@ -9,7 +9,7 @@ export default props => {
             <Grid cols = '3 3 5'> 
                 <input id='departamento' className='form-control' 
                 placeholder='Adicione um departamento' onChange={props.handleChange}
-                value={props.departamento}></input>
+                value={props.departamento} maxLength='100'></input>
             </Grid>
         
             <Grid cols='4 3 2'>

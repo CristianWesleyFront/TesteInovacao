@@ -26,8 +26,8 @@ export default props => {
                 <thead>
                     <tr>
                         <th>Descriçao</th>
-                        <th >Funcionario</th>
-                        <th>Valor</th>
+                        <th className='tbcenter'>Funcionario</th>
+                        <th className='tbcenter'>Valor R$</th>
                         <th className='tableActions'></th>
                     </tr>
 
