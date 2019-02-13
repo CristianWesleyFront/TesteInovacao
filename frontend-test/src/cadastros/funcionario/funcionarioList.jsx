@@ -1,5 +1,5 @@
 import React from 'react'
-import IconButton from '../../common/template/iconButton'
+import IconButton from '../../layout/template/iconButton'
 
 export default props => {
     const renderRows = () =>{

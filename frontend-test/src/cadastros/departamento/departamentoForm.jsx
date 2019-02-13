@@ -1,6 +1,6 @@
 import React from 'react'
-import Grid from '../../layout/grid'
-import IconButton from '../../common/template/iconButton'
+import Grid from '../../layout/bootstrap/grid'
+import IconButton from '../../layout/template/iconButton'
 
 export default props => {
     

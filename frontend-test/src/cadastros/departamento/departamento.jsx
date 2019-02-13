@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
-import Content from '../../common/content/content'
-import ContentHeader from '../../common/content/contentHeader'
+import Content from '../../layout/content/content'
+import ContentHeader from '../../layout/content/contentHeader'
 import axios from 'axios'
 
 import Form from './departamentoForm'
@@ -20,27 +20,7 @@ export default class Departamento extends Component {
     componentWillMount(){
         this.refresh()
     }
-    handleChange(e){
-        console.log(e.target.value)
-        this.setState({...this.state, departamento: e.target.value})
-    }
-    
-    handleAdd(){
-        const name =  this.state.departamento
-        axios.post(URL, { name })
-             .then(resp => this.refresh())
-     }
-     handleRemove(todo) {    
-        axios.delete(`${URL}/${todo._id}`)
-            .then(resp => this.refresh(this.state.departamento))
-    }
-    handleClear(){
-        this.refresh()
-    }
-    refresh(departamento = '') {
-        axios.get(`${URL}?sort=-createdAt`)
-             .then(resp => this.setState({...this.state,departamento, listDepartamentos: resp.data}))
-    }
+   
 
 
     render(){

@@ -48,30 +48,3 @@ button{
 .lista{
     margin-top: 25px;
 }
-
-.table-sla-dep td:nth-child(1){
-    width: 95%;
-}
-.table-sla-dep td:nth-child(2){
-    width: 5%;
-}
-.table-sla td:nth-child(1){
-    width: 65%;
-}
-.table-sla td:nth-child(2){
-    width: 20%;
-}
-.table-sla td:nth-child(3){
-    text-align: center;
-    width: 10%;
-}
-.tbcenter{
-    text-align: center;
-}
-.tableActions{
-    width: 150px
-}
-
-.tabelaLinha{
-    white-space: pre-wrap;
-}

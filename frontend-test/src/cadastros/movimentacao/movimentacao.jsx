@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
-import Content from '../../common/content/content'
-import ContentHeader from '../../common/content/contentHeader'
+import Content from '../../layout/content/content'
+import ContentHeader from '../../layout/content/contentHeader'
 import axios from 'axios'
 import Form from './movimentacaoForm'
 

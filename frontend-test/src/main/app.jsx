@@ -1,9 +1,9 @@
 import React from 'react'
 import { HashRouter } from 'react-router-dom'
 
-import Header from '../common/template/header/header'
-import SideBar from '../common/template/menu/sideBar'
-import Footer from '../common/template/footer/footer'
+import Header from '../layout/template/header/header'
+import SideBar from '../layout/template/menu/sideBar'
+import Footer from '../layout/template/footer/footer'
 
 
 import Routes from './routes'

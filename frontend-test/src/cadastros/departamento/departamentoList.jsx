@@ -1,5 +1,5 @@
 import React from 'react'
-import IconButton from '../../common/template/iconButton'
+import IconButton from '../../layout/template/iconButton'
 
 export default props => {
     const renderRows = () =>{
@@ -13,7 +13,6 @@ export default props => {
             </tr>
         ))
     }
-
     return (
         <div>
             <table className='table table-bordered table-striped table-hover table-condensed lista table-sla-dep'>
@@ -30,6 +29,4 @@ export default props => {
             </table>
         </div> 
     )  
-
-
 }
