@@ -1,23 +1,20 @@
 import React from 'react'
-import Grid from '../../layout/bootstrap/grid'
-import IconButton from '../../layout/template/iconButton'
+import ContactForm from './RenderForm'
 
-export default props => {
-    
-    return(
-        <div role='form' className='todoForm centerDep'>
-            <Grid cols = '3 3 5'> 
-                <input id='departamento' className='form-control' 
-                placeholder='Adicione um departamento' onChange={props.handleChange}
-                value={props.departamento} maxLength='100'></input>
-            </Grid>
-        
-            <Grid cols='4 3 2'>
-                <IconButton style='primary' icon='plus'
-                    onClick={props.handleAdd} ></IconButton>
-                <IconButton style='default' icon='close'
-                    onClick={props.handleClear}></IconButton>
-            </Grid>
-        </div>
-    )
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { addDepartamento } from './departamento.action'
+
+
+ const ContactPage = props => {
+  const submit = values => {
+    props.addDepartamento(values.name)
+  }
+    return <ContactForm onSubmit={submit} />
+  
 }
+
+
+const mapDispatchToProps = (dispatch) => 
+    bindActionCreators({addDepartamento}, dispatch)
+export default connect(null, mapDispatchToProps)(ContactPage)

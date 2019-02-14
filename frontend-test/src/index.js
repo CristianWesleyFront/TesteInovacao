@@ -12,7 +12,7 @@ import thunk from 'redux-thunk'
 
 import './common/js/dependencies'
 import App from './main/app';
-import reducers from './main/reducers'
+import reducers from './main/Store_Reducers'
 
 
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()

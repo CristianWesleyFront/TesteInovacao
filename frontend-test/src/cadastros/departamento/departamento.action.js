@@ -7,8 +7,9 @@ export const changeDepartamento = (event) =>({
 })
 
 export const addDepartamento = (departamento) =>{
+    const name =  departamento
     return dispatch =>{
-        axios.post(URL.URLDepartamento, { departamento })
+        axios.post(URL.URLDepartamento, { name })
             .then(resp => dispatch(clear()))
             .then(resp => dispatch(refresh()))
     }
@@ -25,8 +26,24 @@ export const refresh = () => {
     }
 }
 
-export const removeDepartamento =(departamento)=> {    
-    axios.delete(`${URL.URLDepartamento}/${departamento._id}`)
+export const removeDepartamento =(departamento)=> { 
+    return dispatch => {
+        axios.delete(`${URL.URLDepartamento}/${departamento._id}`)
         .then(resp => dispatch(refresh()))
+    }   
 }
 
+// function submit(values, methods){
+//     return dispatch => {
+//         const id = values._id ? values._id : ''
+//         axios[methods](`${BASE_URL}/billingCycles/${id}`, values)
+//         .then(resp => {
+//             // toastr.success('Sucesso', 'Operação realizada com sucesso')
+//             dispatch(refresh())
+//         })
+//         .catch(e => {
+//             e.response.data.errors.forEach(error => 
+//                 toastr.error('Erro',error))
+//         })
+//     }
+//}

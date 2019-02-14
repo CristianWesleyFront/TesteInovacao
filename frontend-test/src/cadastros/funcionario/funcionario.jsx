@@ -39,6 +39,8 @@ export default class Formulario extends Component {
     handleAdd(){
         const name = this.state.name
         const departamento =  this.state.departamento
+        console.log(name)
+        console.log(departamento)
         axios.post(URL, { name, departamento })
              .then(resp => this.refresh())
              

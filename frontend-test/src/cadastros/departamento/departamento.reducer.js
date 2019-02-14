@@ -6,14 +6,11 @@ export default (state = INITIAL_STATE, action) => {
     switch(action.type) {
         case 'DEPARTAMENTO_CHANGED':
             return { ...state, deparmento: action.payload }
-        case 'FUNCIONARIO_CHANGED': 
-            return { ...state, funcionario: action.payload } 
-        case 'DESCRIPTION_SEARCHED': 
-            return {...state, list: action.payload }
-        case 'FUNCIONARIO_SEARCHED': 
-            return {...state, list: action.payload }
-        case 'CLEAR': 
-            return {...state, description: '',funcionario: ''}
+        case 'DEPARTAMENTO_REFRESH': 
+        return { ...state, list: action.payload } 
+
+        case 'DEPARTAMENTO_CLEAR': 
+            return {...state, deparmento: ''}
         default : 
             return state
     }

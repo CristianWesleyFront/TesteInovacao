@@ -1,49 +1,34 @@
 import React, {Component} from 'react'
 import Content from '../../layout/content/content'
 import ContentHeader from '../../layout/content/contentHeader'
-import axios from 'axios'
 
-import Form from './departamentoForm'
+
 import List from './departamentoList'
+import Form from './departamentoForm'
 
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { refresh } from './departamento.action'
 
-const URL = 'http://localhost:9000/api/departamento'
-export default class Departamento extends Component {
-    constructor(prosp){
-        super(prosp)
-        this.state = { departamento: '', listDepartamentos: []}
-        this.handleChange = this.handleChange.bind(this)
-        this.handleAdd = this.handleAdd.bind(this)
-        this.handleRemove = this.handleRemove.bind(this)
-        this.handleClear = this.handleClear.bind(this)
-    }
+class Departamento extends Component {
+
     componentWillMount(){
-        this.refresh()
+        this.props.refresh()
     }
-   
-
-
     render(){
         return (
             <div>
                 <ContentHeader title='Cadastro de Departamento'></ContentHeader>
                 <Content>
-                    <Form
-                     departamento={this.state.departamento}
-                     list= {this.state.listDepartamentos}
-                     handleChange ={this.handleChange}
-                     handleChangeDe ={this.handleChangeDe}
-                     handleAdd={this.handleAdd}
-                     handleClear= {this.handleClear}
-                    ></Form>
+                    <Form></Form>
                     <hr/>
-                    <List 
-                     listDepartamentos={this.state.listDepartamentos}
-                     handleRemove = {this.handleRemove}
-                   />
+                    <List />
                 </Content>
             </div> 
         )
     }
 }
    
+const mapDispatchToProps = dispatch => 
+    bindActionCreators({  refresh }, dispatch)
+export default connect(null, mapDispatchToProps)(Departamento)
