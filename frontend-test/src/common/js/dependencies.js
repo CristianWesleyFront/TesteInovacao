@@ -14,3 +14,6 @@ import 'admin-lte/plugins/iCheck/flat/blue.css'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '../style/custom.css'
+import '../../cadastros/departamento/style/Departamento.Style.css'
+import '../../ListaMovimentacao/TableList_Movimentacao/style/Movimentacao.Style.css'
+import '../../cadastros/funcionario/style/Funcinario.Style.css'

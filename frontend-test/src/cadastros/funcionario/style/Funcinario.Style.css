@@ -1,0 +1,22 @@
+.table-funcionario td:nth-child(1){
+    width: 70%;
+}
+
+.table-funcionario td:nth-child(2){
+    width: 25%;
+}
+.table-funcionario td:nth-child(3){
+    width: 5%;
+}
+.tableActions{
+    width: 150px
+}
+.centerForm {
+    margin: auto;
+    text-align: center;
+    width: 85%;
+    padding: 10px;
+  }
+.tabelaLinha{
+    white-space: pre-wrap;
+}

@@ -3,8 +3,8 @@ import Content from '../../layout/content/content'
 import ContentHeader from '../../layout/content/contentHeader'
 
 
-import List from './departamentoList'
-import Form from './departamentoForm'
+import List from './departamentoList/departamentoList'
+import Form from './departamentoForm/departamentoForm'
 
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'

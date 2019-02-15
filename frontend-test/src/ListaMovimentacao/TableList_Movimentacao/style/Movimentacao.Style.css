@@ -1,25 +1,20 @@
-
-.table-dep td:nth-child(1){
-    width: 95%;
-}
-.table-dep td:nth-child(2){
-    width: 5%;
-}
-.table-sla td:nth-child(1){
+.table-Movimentacao td:nth-child(1){
     width: 65%;
 }
-.table-sla td:nth-child(2){
+
+.table-Movimentacao td:nth-child(2){
     width: 20%;
 }
-.table-sla td:nth-child(3){
+
+.table-Movimentacao td:nth-child(3){
     text-align: center;
     width: 10%;
 }
 
-
 .tbcenter{
     text-align: center;
 }
+
 .tableActions{
     width: 150px
 }

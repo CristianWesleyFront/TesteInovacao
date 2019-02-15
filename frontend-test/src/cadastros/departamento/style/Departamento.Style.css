@@ -1,0 +1,22 @@
+.table-departamento td:nth-child(1){
+    width: 95%;
+}
+
+.table-departamento td:nth-child(2){
+    width: 5%;
+}
+
+.tableActions{
+    width: 150px
+}
+.centerDep {
+    margin: auto;
+    margin-top: 35px;
+    margin-right: -130px;
+    text-align: center;
+    width: 85%;
+    padding: 10px;
+}
+.tabelaLinha{
+    white-space: pre-wrap;
+}

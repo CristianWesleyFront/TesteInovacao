@@ -1,9 +1,9 @@
 import React from 'react'
-import ContactForm from './RenderForm'
+import ContactForm from './RenderForm.Departamento'
 
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { addDepartamento } from './departamento.action'
+import { addDepartamento } from '../departamento.action'
 
 
  const ContactPage = props => {

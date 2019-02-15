@@ -1,63 +1,17 @@
 import React, {Component} from 'react'
 import Content from '../../layout/content/content'
 import ContentHeader from '../../layout/content/contentHeader'
-import axios from 'axios'
-import Form from './funcionarioForm'
-import List from './funcionarioList'
 
+import Form from './funcionarioForm/funcionarioForm'
+import List from './funcionarioList/funcionarioList'
 
-const URL = 'http://localhost:9000/api/funcionario'
-const URLDe = 'http://localhost:9000/api/departamento'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { refresh } from './funcionario.action'
 
-export default class Formulario extends Component {
-    constructor(prosp){
-        super(prosp)
-        this.state = {name: '', departamento: '', listDepartamentos: [],listFuncionarios: [] }
-        this.handleChange = this.handleChange.bind(this)
-        this.handleChangeDe = this.handleChangeDe.bind(this)
-        this.handleAdd = this.handleAdd.bind(this)
-        this.handleRemove = this.handleRemove.bind(this)
-        this.handleClear = this.handleClear.bind(this)
-    }
+class Formulario extends Component {
     componentWillMount(){
-        this.refresh()
-    }
-    handleChange(e){
-        console.log(e.target.value)
-        this.setState({...this.state, name: e.target.value})
-    }
-    handleChangeDe(newValue){
-        let j = newValue.length
-        let desp = []
-        for(let i=0 ; i < j; i++){
-            desp[i] = newValue[i].value
-        }
-        console.log(newValue)
-        console.log(desp)
-        this.setState({...this.state, departamento: desp })
-    }
-    handleAdd(){
-        const name = this.state.name
-        const departamento =  this.state.departamento
-        console.log(name)
-        console.log(departamento)
-        axios.post(URL, { name, departamento })
-             .then(resp => this.refresh())
-             
-     }
-     handleRemove(todo) {    
-        axios.delete(`${URL}/${todo._id}`)
-            .then(resp => this.refresh(this.state.name))
-    }
-    handleClear(){
-        this.refresh()
-    }
-    refresh(name = '') {
-        axios.get(`${URL}?sort=-createdAt`)
-             .then(resp => this.setState({...this.state,name, listFuncionarios: resp.data})
-                 )
-             .then(axios.get(URLDe)
-                .then(resp => this.setState({...this.state,listDepartamentos: resp.data})))
+        this.props.refresh()
     }
    
 
@@ -66,22 +20,15 @@ export default class Formulario extends Component {
             <div>
                 <ContentHeader title='Cadastro de Funcionário'></ContentHeader>
                 <Content>
-                    <Form
-                     name={this.state.name}
-                     list= {this.state.listDepartamentos}
-                     departamento= {this.state.departamento} 
-                     handleChange ={this.handleChange}
-                     handleChangeDe ={this.handleChangeDe}
-                     handleAdd={this.handleAdd}
-                     handleClear= {this.handleClear}
-                    ></Form>
+                    <Form></Form>
                     <hr/>
-                   <List 
-                     listFuncionarios={this.state.listFuncionarios}
-                     handleRemove = {this.handleRemove}
-                   />
+                   <List/>
                 </Content>
             </div> 
         )
     }
 } 
+
+const mapDispatchToProps = dispatch => 
+    bindActionCreators({  refresh }, dispatch)
+export default connect(null, mapDispatchToProps)(Formulario)

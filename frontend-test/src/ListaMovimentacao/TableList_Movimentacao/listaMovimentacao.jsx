@@ -11,7 +11,7 @@ import { Remove } from '../Movimentacoes.Actions'
 
 const listaMovimentacao = props => {
     return (    
-        <CTable>
+        <CTable type='Lista table-Movimentacao'>
             <HeadTable />
             <CTbody>
                 {Functions(props.list,props.Remove,'movimentacao')}

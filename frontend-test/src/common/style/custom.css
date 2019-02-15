@@ -16,20 +16,11 @@ button{
     margin-top: 35px;
     margin-right: -200px;
     text-align: center;
-    width: 85%;
-    
+    width: 85%;  
     padding: 10px;
 }
 
-.centerDep {
-    margin: auto;
-    margin-top: 35px;
-    margin-right: -130px;
-    text-align: center;
-    width: 85%;
-    
-    padding: 10px;
-}
+
 
 .center {
     margin: auto;
@@ -37,7 +28,6 @@ button{
     margin-right: -80px;
     text-align: center;
     width: 85%;
-    
     padding: 10px;
   }
 
@@ -45,6 +35,4 @@ button{
     text-align: center
 }
 
-.lista{
-    margin-top: 25px;
-}
+

@@ -17,6 +17,7 @@ class Movimentacao extends Component {
             <div>
               <ContentHeader title='Lista de Movimentações'/>
                 <Content>
+                    <hr></hr>
                     <ListaMovimentacao />
                 </Content> 
             </div>
