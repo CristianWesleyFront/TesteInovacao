@@ -19,9 +19,10 @@ const FuncionarioForm = props => {
                     cols='3 3 7' 
                     placeholder='Adicione um Funcionario'
                 />
+                <Grid cols='3 3 4'>
+                    <Select />
+                </Grid>
                 
-                <Select />
-                    
                 <Grid cols='1 1 1'>
                     <button  className='btn btn-primary' type="submit" disabled={pristine || submitting}>
                         <i className={'fa fa-plus'}></i>

@@ -1,6 +1,6 @@
 import React from 'react'
-import Grid from '../../layout/bootstrap/grid'
-import IconButton from '../../layout/template/iconButton'
+import Grid from '../../../../layout/bootstrap/grid'
+import IconButton from '../../../../layout/template/iconButton'
 
 
 import Select from 'react-select';
